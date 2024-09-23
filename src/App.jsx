@@ -62,13 +62,18 @@ function App() {
         setTotal(parseFloat(firstNumber) * parseFloat(secondNumber));
         break;
       case '%':
-        setTotal(parseFloat(firstNumber) % parseFloat(secondNumber));
+        if (secondNumber != '0') {
+          setTotal(parseFloat(firstNumber) % parseFloat(secondNumber));
+         
+        } else {
+          setTotal( "error");}
         break;
       case '/':
-        if (secondNumber === '0') {
-          alert('Impossible de diviser par 0 !!');
-        } else {
+        if (secondNumber != '0') {
           setTotal(parseFloat(firstNumber) / parseFloat(secondNumber));
+         
+        } else {
+          setTotal( "error");
         }
         break;
     }
